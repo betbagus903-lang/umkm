@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glaze — UMKM Lokal</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================================================
+       NAVBAR
+  ================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+
+      <a class="navbar-brand-text" href="#heroSection">🍩 Glaze</a>
+
+      <button
+        class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMain"
+        style="filter: invert(1);"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto gap-2">
+          <li class="nav-item"><a class="nav-link-custom active" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="#tentang">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="#pesan">Pesan</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       HERO SECTION
+  ================================================ -->
+  <section class="hero-section" id="heroSection">
+    <div class="background-wipe" id="backgroundWipe" aria-hidden="true"></div>
+
+    <!-- ===== KIRI: Lingkaran foto material ===== -->
+    <div class="material-circle" id="materialCircle">
+      <img
+        src="material/materailmatcha.jpeg"
+        alt="Matcha Material"
+        id="materialImg"
+      />
+    </div>
+
+    <!-- ===== TENGAH + KANAN: Bootstrap grid ===== -->
+    <div class="container-fluid px-4 px-lg-5" style="position:relative; z-index:4;">
+      <div class="row align-items-center" style="min-height: 100vh;">
+
+        <!-- Spacer kolom kiri (buat ruang untuk lingkaran) -->
+        <div class="col-lg-3 col-md-2 d-none d-md-block"></div>
+
+        <!-- TENGAH: Teks -->
+        <div class="col-lg-4 col-md-10 col-12 mx-auto hero-text-col">
+          <!-- Divider vertikal -->
+          <div class="hero-divider"></div>
+
+          <h1 class="hero-headline" id="heroHeadline">
+            Matcha<br/>Glazed
+          </h1>
+
+          <p class="hero-desc" id="heroDesc">
+            Rich and velvety matcha coating meets our signature fluffy dough.
+            A bold earthy sweetness in every single bite. Pure perfection.
+          </p>
+
+          <a href="#pesan" class="btn-order-now">
+            Order Now
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <div class="flavor-picker" role="group" aria-label="Pilih rasa donat">
+            <button class="flavor-option is-active" type="button" data-flavor="matcha" aria-label="Matcha" title="Matcha" aria-pressed="true">
+              <img src="donat/donatmatcha.png" alt="" aria-hidden="true" />
+            </button>
+            <button class="flavor-option" type="button" data-flavor="chocolate" aria-label="Cokelat" title="Cokelat" aria-pressed="false">
+              <img src="donat/donatcoklat.png" alt="" aria-hidden="true" />
+            </button>
+            <button class="flavor-option" type="button" data-flavor="vanilla" aria-label="Vanila" title="Vanila" aria-pressed="false">
+              <img src="donat/donatvanila.png" alt="" aria-hidden="true" />
+            </button>
+          </div>
+
+        </div>
+
+        <!-- KANAN: Donut foto -->
+        <div class="col-lg-4 col-md-6 col-12 offset-lg-1 offset-md-0 hero-donut-col">
+          <div class="donut-stage">
+            <button class="donut-switch" id="donutSwitch" type="button"
+              aria-label="Pilih rasa berikutnya: Cokelat"
+              title="Ganti rasa donat">
+            <span class="donut-glow" aria-hidden="true"></span>
+            <img
+              src="donat/donatmatcha.png"
+              alt="Donat Matcha"
+              class="hero-donut-img"
+              id="heroDonutImg"
+            />
+            </button>
+            <div class="matcha-particles is-visible" id="matchaParticles" aria-hidden="true">
+              <img class="matcha-leaf leaf-top-left" src="partikel/daun.png" alt="" />
+              <img class="matcha-leaf leaf-top-right" src="partikel/daun.png" alt="" />
+              <img class="matcha-leaf leaf-bottom-right" src="partikel/daun.png" alt="" />
+            </div>
+            <div class="chocolate-particles" id="chocolateParticles" aria-hidden="true">
+              <img class="chocolate-crumb crumb-one" src="partikel/coklat.png" alt="" />
+              <img class="chocolate-crumb crumb-two" src="partikel/kacang.png" alt="" />
+              <img class="chocolate-crumb crumb-three" src="partikel/coklat.png" alt="" />
+              <img class="chocolate-crumb crumb-four" src="partikel/kacang.png" alt="" />
+              <img class="chocolate-crumb crumb-five" src="partikel/kacang.png" alt="" />
+              <img class="chocolate-crumb crumb-six" src="partikel/coklat.png" alt="" />
+            </div>
+            <div class="coffee-particles" id="coffeeParticles" aria-hidden="true">
+              <img class="coffee-bean bean-one" src="partikel/kopi.png" alt="" />
+              <img class="coffee-bean bean-two" src="partikel/kopi.png" alt="" />
+              <img class="coffee-bean bean-three" src="partikel/kopi.png" alt="" />
+            </div>
+            <div class="strawberry-particles" id="strawberryParticles" aria-hidden="true">
+              <img class="strawberry-leaf berry-leaf" src="partikel/daun.png" alt="" />
+              <img class="strawberry-particle berry-one" src="partikel/stroberi.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Shape divider layer -->
+    <div class="wave-layer-1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 130" preserveAspectRatio="none">
+        <path fill="#e9f4e3"
+          d="M0,67 C170,25 335,107 545,90 C760,73 920,26 1110,51 C1250,70 1355,101 1440,63 L1440,130 L0,130 Z"/>
+      </svg>
+    </div>
+
+    <!-- Main shape divider -->
+    <div class="wave-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 130" preserveAspectRatio="none">
+        <path fill="#ffffff"
+          d="M0,82 C185,50 350,116 558,96 C780,75 945,45 1125,69 C1275,89 1368,109 1440,81 L1440,130 L0,130 Z"/>
+      </svg>
+    </div>
+
+  </section>
+
+  <!-- ================================================
+       MENU
+  ================================================ -->
+  <section class="menu-section" id="menu">
+
+    <div class="container">
+      <div class="sec-head reveal-on-scroll">
+        <div><span class="section-kicker">Menu Favorit</span>
+        <h2 class="sec-title">Rasa terbaik untuk setiap momen.</h2></div>
+        <a class="sec-link" href="https://wa.me/6281375186742?text=Halo+Glaze%2C+boleh+lihat+menu+lengkapnya%3F" target="_blank" rel="noopener">Lihat Semua Menu <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="mn-grid">
+        <article class="mn-card reveal-on-scroll">
+          <div class="mn-img" style="--tint:#e6f0df"><span class="mn-badge">Best Seller</span><img src="donat/donat1.png" alt="Donat Matcha" /></div>
+          <h3>Matcha Glazed</h3><p>Lapisan matcha premium yang kaya rasa, bertemu adonan lembut.</p>
+          <span class="mn-price">Rp 6.000</span>
+          <a class="mn-btn" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Matcha+Glazed" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pesan Sekarang</a>
+        </article>
+        <article class="mn-card reveal-on-scroll">
+          <div class="mn-img" style="--tint:#f1e6dd"><img src="donat/donat2.png" alt="Donat Chocolate" /></div>
+          <h3>Chocolate Glazed</h3><p>Glaze cokelat smooth di atas donat fluffy. Klasik yang aman.</p>
+          <span class="mn-price">Rp 5.000</span>
+          <a class="mn-btn" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Chocolate+Glazed" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pesan Sekarang</a>
+        </article>
+        <article class="mn-card reveal-on-scroll">
+          <div class="mn-img" style="--tint:#fae3e8"><img src="donat/donat3.png" alt="Donat Strawberry" /></div>
+          <h3>Strawberry Glazed</h3><p>Glaze stroberi cerah dan manis, susah berhenti di gigitan pertama.</p>
+          <span class="mn-price">Rp 5.000</span>
+          <a class="mn-btn" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Strawberry+Glazed" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pesan Sekarang</a>
+        </article>
+        <article class="mn-card reveal-on-scroll">
+          <div class="mn-img" style="--tint:#eee4db"><img src="donat/donat4.png" alt="Donat Tiramisu" /></div>
+          <h3>Tiramisu Glazed</h3><p>Rasa kopi ala tiramisu yang kaya, bikin semangat.</p>
+          <span class="mn-price">Rp 6.000</span>
+          <a class="mn-btn" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Tiramisu+Glazed" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pesan Sekarang</a>
+        </article>
+        <article class="mn-card reveal-on-scroll">
+          <div class="mn-img" style="--tint:#f8f0dc"><img src="donat/donat5.png" alt="Donat Vanilla" /></div>
+          <h3>Vanilla Glazed</h3><p>Manis vanila yang lembut dan ringan, cocok untuk semua orang.</p>
+          <span class="mn-price">Rp 5.000</span>
+          <a class="mn-btn" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Vanilla+Glazed" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pesan Sekarang</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       KUALITAS / TENTANG
+  ================================================ -->
+  <section class="about-section" id="tentang">
+    <div class="container">
+      <div class="ql-grid">
+        <div class="ql-photo reveal-on-scroll">
+          <div class="ql-fallback" aria-hidden="true">
+            <img src="donat/donattiraminsu.png" alt="" />
+            <img src="donat/donatmatcha.png" alt="" />
+            <img src="donat/donatsroberi.png" alt="" />
+          </div>
+          <!-- Partikel dekorasi -->
+          <div class="ql-particles" aria-hidden="true">
+            <img class="qlp qlp-1" src="partikel/daun.png" alt="" />
+            <img class="qlp qlp-2" src="partikel/stroberi.png" alt="" />
+            <img class="qlp qlp-3" src="partikel/coklat.png" alt="" />
+            <img class="qlp qlp-4" src="partikel/kacang.png" alt="" />
+            <img class="qlp qlp-5" src="partikel/daun.png" alt="" />
+            <img class="qlp qlp-6" src="partikel/kopi.png" alt="" />
+            <img class="qlp qlp-7" src="partikel/stroberi.png" alt="" />
+            <img class="qlp qlp-8" src="partikel/coklat.png" alt="" />
+            <img class="qlp qlp-9" src="partikel/kacang.png" alt="" />
+            <img class="qlp qlp-10" src="partikel/daun.png" alt="" />
+            <img class="qlp qlp-11" src="partikel/kopi.png" alt="" />
+            <img class="qlp qlp-12" src="partikel/stroberi.png" alt="" />
+          </div>
+          <img class="ql-real" src="foto/tentang.jpg" alt="Donat Glaze" onerror="this.remove()" />
+        </div>
+        <div class="reveal-on-scroll">
+          <span class="section-kicker">Kenapa Pilih Kami</span>
+          <h2 class="sec-title">Kualitas terbaik, untuk kamu.</h2>
+          <p class="ql-text">Dibuat di dapur rumahan, bukan di pabrik. Adonan difermentasi perlahan supaya fluffy, ringan, dan tidak bikin eneg. Tanpa pengawet, tanpa shortcut.</p>
+          <div class="ql-feats"><div class="ql-f"><i class="bi bi-basket3"></i><span>Bahan pilihan berkualitas</span></div><div class="ql-f"><i class="bi bi-emoji-smile"></i><span>Rasa lezat dan variatif</span></div><div class="ql-f"><i class="bi bi-shield-check"></i><span>Proses higienis dan aman</span></div><div class="ql-f"><i class="bi bi-heart"></i><span>Dukungan UMKM lokal</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAKET HEMAT / PESAN
+  ================================================ -->
+  <section class="order-section" id="pesan">
+    <div class="container">
+      <div class="pk-grid">
+        <div class="pk-intro reveal-on-scroll">
+          <span class="section-kicker">Paket Hemat</span>
+          <h2 class="sec-title">Lebih hemat, lebih nikmat!</h2>
+          <p>Cocok untuk keluarga, hampers, atau acara kantor. Chat kami, dan donat siap diproses hari itu juga.</p>
+          <a class="mn-btn mn-btn--solid" href="https://wa.me/6281375186742?text=Halo+Glaze%2C+saya+mau+pesan+donat" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Chat WhatsApp</a>
+        </div>
+        <article class="pk-card reveal-on-scroll"><div class="pk-box pk-box--single"><img src="donat/paket5.png" alt="Paket Mix 5 Rasa" /></div><h3>Mix 5 Rasa</h3><strong>Rp 27.000</strong><small>1 dari tiap rasa</small>
+          <a class="mn-btn mn-btn--line" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Mix+5+Rasa" target="_blank" rel="noopener">Pesan</a></article>
+        <article class="pk-card reveal-on-scroll"><div class="pk-box pk-box--single"><img src="donat/paket6.png" alt="Paket 6 pcs" /></div><h3>Paket 6 pcs</h3><strong>Rp 30.000</strong><small>Pilih rasa sesukamu</small>
+          <a class="mn-btn mn-btn--line" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Paket+6+pcs" target="_blank" rel="noopener">Pesan</a></article>
+        <article class="pk-card reveal-on-scroll"><div class="pk-box pk-box--single"><img src="donat/paket12.png" alt="Paket 12 pcs" /></div><h3>Paket 12 pcs</h3><strong>Rp 58.000</strong><small>Pilih rasa sesukamu</small>
+          <a class="mn-btn mn-btn--line" href="https://wa.me/6281375186742?text=Halo%2C+saya+mau+pesan+Paket+12+pcs" target="_blank" rel="noopener">Pesan</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       TESTIMONI
+  ================================================ -->
+  <section class="tm-section">
+    <div class="container">
+      <div class="sec-head reveal-on-scroll"><div><span class="section-kicker">Apa Kata Mereka</span>
+        <h2 class="sec-title">Pelanggan kami selalu kembali.</h2></div></div>
+      <div class="tm-grid">
+        <figure class="tm-card reveal-on-scroll"><div class="tm-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <blockquote>“Donatnya lembut banget, nggak eneg. Matcha-nya juara!”</blockquote><figcaption><span>K</span>Kesya</figcaption></figure>
+        <figure class="tm-card reveal-on-scroll"><div class="tm-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <blockquote>“Pesan 12 pcs buat acara kantor, semua habis. Pasti repeat.”</blockquote><figcaption><span>A</span>Arini</figcaption></figure>
+        <figure class="tm-card reveal-on-scroll"><div class="tm-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          <blockquote>“Packing rapi, rasanya konsisten. Cocok buat hampers.”</blockquote><figcaption><span>D</span>Dewi L.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       FOOTER
+  ================================================ -->
+  <footer class="site-footer-new" id="kontak">
+    <div class="container">
+      <div class="footer-new-top">
+        <div class="footer-new-brand">
+          <a href="#heroSection" class="footer-new-logo">🍩 Glaze</a>
+          <p>Donat rumahan, rasa yang bikin balik lagi.</p>
+        </div>
+        <nav class="footer-new-nav" aria-label="Footer navigation"><a href="#menu">Menu</a><a href="#tentang">Tentang</a><a href="#pesan">Pesan</a></nav>
+        <div class="footer-new-contact">
+          <a href="https://wa.me/6281375186742" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> +62 813-7518-6742</a>
+          <a href="#"><i class="bi bi-instagram"></i> @sweetdonuts.id</a>
+          <span><i class="bi bi-clock"></i> Senin–Sabtu, 08.00–20.00</span>
+        </div>
+      </div>
+      <div class="footer-new-bottom"><span>&copy; 2024 Glaze</span>
+        <a href="#heroSection" class="footer-new-totop" aria-label="Kembali ke atas"><i class="bi bi-arrow-up"></i></a></div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('mainNavbar');
+    const heroSection = document.getElementById('heroSection');
+    const backgroundWipe = document.getElementById('backgroundWipe');
+    const donutSwitch = document.getElementById('donutSwitch');
+    const heroDonutImg = document.getElementById('heroDonutImg');
+    const matchaParticles = document.getElementById('matchaParticles');
+    const chocolateParticles = document.getElementById('chocolateParticles');
+    const coffeeParticles = document.getElementById('coffeeParticles');
+    const strawberryParticles = document.getElementById('strawberryParticles');
+    const materialCircle = document.getElementById('materialCircle');
+    const materialImg = document.getElementById('materialImg');
+    const heroTextCol = document.querySelector('.hero-text-col');
+    const heroHeadline = document.getElementById('heroHeadline');
+    const heroDesc = document.getElementById('heroDesc');
+    const flavorOptions = [...document.querySelectorAll('.flavor-option')];
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const flavors = [
+      {
+        id: 'matcha', name: 'Matcha', heading: 'Matcha<br/>Glazed',
+        description: 'Rich and velvety matcha coating meets our signature fluffy dough. A bold earthy sweetness in every single bite. Pure perfection.',
+        donut: 'donat/donatmatcha.png', material: 'material/materailmatcha.jpeg',
+        color: '#3A8C3A', navbar: 'rgba(30, 80, 30, 0.92)'
+      },
+      {
+        id: 'chocolate', name: 'Cokelat', heading: 'Chocolate<br/>Glazed',
+        description: 'Rich chocolate glaze meets our signature fluffy dough. A smooth, indulgent sweetness in every single bite.',
+        donut: 'donat/donatcoklat.png', material: 'material/materialcoklt.jpg',
+        color: '#754c32', navbar: 'rgba(79, 48, 32, 0.94)'
+      },
+      {
+        id: 'vanilla', name: 'Vanila', heading: 'Vanilla<br/>Glazed',
+        description: 'Delicate vanilla sweetness coats our signature fluffy dough for a soft, classic treat.',
+        donut: 'donat/donatvanila.png', material: 'material/materialvanilla.jpg',
+        color: '#eee5d2', gradient: 'linear-gradient(132deg, #fffefa 0%, #fbf7ed 34%, #eee3cf 70%, #fffaf0 100%)',
+        navbar: 'rgba(101, 72, 34, 0.94)'
+      },
+      {
+        id: 'tiramisu', name: 'Tiramisu', heading: 'Tiramisu<br/>Glazed',
+        description: 'A smooth coffee-inspired glaze gives every fluffy bite a rich, comforting tiramisu flavor.',
+        donut: 'donat/donattiraminsu.png', material: 'material/materialtiraminsu.jpg',
+        color: '#725342', navbar: 'rgba(73, 52, 41, 0.94)'
+      },
+      {
+        id: 'strawberry', name: 'Stroberi', heading: 'Strawberry<br/>Glazed',
+        description: 'A sweet strawberry glaze brings a bright, fruity finish to our soft and fluffy signature dough.',
+        donut: 'donat/donatsroberi.png', material: 'material/materialstroberi.jpg',
+        color: '#ad4055', gradient: 'linear-gradient(135deg, #a9284e 0%, #e95b7c 52%, #f6b4c4 100%)',
+        navbar: 'rgba(104, 36, 51, 0.94)'
+      }
+    ];
+    let currentFlavorIndex = 0;
+    let isSwitchingFlavor = false;
+    let autoSlideTimer;
+    const autoSlideDelay = 2000;
+
+    function pauseAutoSlide() {
+      window.clearTimeout(autoSlideTimer);
+      autoSlideTimer = undefined;
+    }
+
+    function scheduleAutoSlide() {
+      pauseAutoSlide();
+      if (reducedMotion || document.hidden || heroSection.matches(':hover')) return;
+
+      autoSlideTimer = window.setTimeout(() => {
+        selectFlavor((currentFlavorIndex + 1) % flavors.length);
+      }, autoSlideDelay);
+    }
+
+    flavors.slice(1).forEach(flavor => {
+      [flavor.donut, flavor.material].forEach(source => {
+        const image = new Image();
+        image.src = source;
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    function renderFlavorOptions(startIndex) {
+      flavorOptions.forEach((option, visibleIndex) => {
+        const flavor = flavors[(startIndex + visibleIndex) % flavors.length];
+        option.dataset.flavor = flavor.id;
+        option.setAttribute('aria-label', `Pilih ${flavor.name}`);
+        option.setAttribute('aria-pressed', String(visibleIndex === 0));
+        option.title = flavor.name;
+        option.classList.toggle('is-active', visibleIndex === 0);
+        option.querySelector('img').src = flavor.donut;
+      });
+    }
+
+    renderFlavorOptions(currentFlavorIndex);
+
+    function selectFlavor(nextIndex) {
+      if (isSwitchingFlavor || nextIndex === currentFlavorIndex) return;
+      pauseAutoSlide();
+      isSwitchingFlavor = true;
+      const flavor = flavors[nextIndex];
+      const wipeBackground = flavor.gradient || flavor.color;
+      donutSwitch.disabled = true;
+      flavorOptions.forEach(option => { option.disabled = true; });
+      const exitDuration = reducedMotion ? 0 : 700;
+      const enterDuration = reducedMotion ? 0 : 650;
+      heroSection.classList.remove('is-vanilla');
+      navbar.classList.remove('is-vanilla');
+      if (flavor.id !== 'matcha') matchaParticles.classList.remove('is-visible');
+      if (flavor.id !== 'chocolate') chocolateParticles.classList.remove('is-visible', 'is-bursting');
+      if (flavor.id !== 'tiramisu') coffeeParticles.classList.remove('is-visible');
+      if (flavor.id !== 'strawberry') strawberryParticles.classList.remove('is-visible');
+      backgroundWipe.style.setProperty('--wipe-background', wipeBackground);
+      backgroundWipe.classList.add('is-wiping');
+      heroDonutImg.classList.add('is-exiting');
+      materialCircle.classList.add('is-updating');
+      heroTextCol.classList.add('is-updating');
+
+      window.setTimeout(() => {
+        currentFlavorIndex = nextIndex;
+        heroDonutImg.src = flavor.donut;
+        heroDonutImg.alt = `Donat ${flavor.name}`;
+        materialImg.src = flavor.material;
+        materialImg.alt = `Material ${flavor.name}`;
+        heroHeadline.innerHTML = flavor.heading;
+        heroDesc.textContent = flavor.description;
+        heroSection.style.background = wipeBackground;
+        backgroundWipe.classList.remove('is-wiping');
+        heroSection.classList.toggle('is-vanilla', flavor.id === 'vanilla');
+        navbar.classList.toggle('is-vanilla', flavor.id === 'vanilla');
+        document.documentElement.style.setProperty(
+          '--navbar-scrolled-background',
+          flavor.navbar
+        );
+        renderFlavorOptions(nextIndex);
+        const nextFlavor = flavors[(nextIndex + 1) % flavors.length];
+        donutSwitch.setAttribute('aria-label', `Pilih rasa berikutnya: ${nextFlavor.name}`);
+        heroDonutImg.classList.remove('is-exiting');
+
+        window.requestAnimationFrame(() => {
+          heroDonutImg.classList.add('is-entering');
+          if (flavor.id === 'matcha') matchaParticles.classList.add('is-visible');
+          if (flavor.id === 'chocolate') {
+            chocolateParticles.classList.add('is-visible');
+            window.requestAnimationFrame(() => chocolateParticles.classList.add('is-bursting'));
+          }
+          if (flavor.id === 'tiramisu') coffeeParticles.classList.add('is-visible');
+          if (flavor.id === 'strawberry') strawberryParticles.classList.add('is-visible');
+          materialCircle.classList.remove('is-updating');
+          heroTextCol.classList.remove('is-updating');
+        });
+
+        window.setTimeout(() => {
+          heroDonutImg.classList.remove('is-entering');
+          isSwitchingFlavor = false;
+          donutSwitch.disabled = false;
+          flavorOptions.forEach(option => { option.disabled = false; });
+          scheduleAutoSlide();
+        }, enterDuration);
+      }, exitDuration);
+    }
+
+    donutSwitch.addEventListener('click', () => {
+      selectFlavor((currentFlavorIndex + 1) % flavors.length);
+    });
+
+    flavorOptions.forEach((option, visibleIndex) => {
+      option.addEventListener('click', () => {
+        const nextIndex = (currentFlavorIndex + Math.max(visibleIndex, 1)) % flavors.length;
+        selectFlavor(nextIndex);
+      });
+    });
+
+    heroSection.addEventListener('pointerenter', pauseAutoSlide);
+    heroSection.addEventListener('pointerleave', scheduleAutoSlide);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) pauseAutoSlide();
+      else scheduleAutoSlide();
+    });
+    scheduleAutoSlide();
+
+    const scrollRevealTargets = document.querySelectorAll('.reveal-on-scroll');
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      document.documentElement.classList.add('has-scroll-reveal');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-revealed');
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      scrollRevealTargets.forEach(target => revealObserver.observe(target));
+    } else {
+      scrollRevealTargets.forEach(target => target.classList.add('is-revealed'));
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
